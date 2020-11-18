@@ -17,6 +17,10 @@ void draw(){
 
 void mousePressed(){
   x++;
+  graphCalc();
+}
+
+void graphCalc(){
   a = tan(((2*PI)/360)*angle);
   y = (-(9.81*1*(1+sq(a)))/(4*e))*sq(x)+a*x+h;
   println(x + ", " + y);
