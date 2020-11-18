@@ -4,8 +4,9 @@ float x = 0;
 float y;
 float a;
 float angle = 45;
-float e = 1000;
+float e = 1500;
 float h = 80;
+boolean isAiming = false;
 
 void settings(){
   size(sizeX, sizeY);
@@ -15,11 +16,21 @@ void draw(){
   clear();
   rect(sizeX/10, sizeY-h, 30, h);
   ellipse(x + sizeX/10 + 15, sizeY-y, 20, 20);
+  if(isAiming == true){
+    
+  } else {
+    x++;
+    graphCalc();
+  }
 }
 
 void mousePressed(){
-  x++;
-  graphCalc();
+  isAiming = true;
+}
+
+void mouseReleased(){
+  isAiming = false;
+  x = 0;
 }
 
 void graphCalc(){
